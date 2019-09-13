@@ -1,7 +1,5 @@
 package instruments;
 
-import instruments.Instrument;
-
 public class Guitar extends Instrument {
 
     private int numberOfStrings;
