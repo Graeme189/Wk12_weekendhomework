@@ -1,4 +1,4 @@
-import instruments.Keyboard;
+import goods.Keyboard;
 import org.junit.Before;
 import org.junit.Test;
 

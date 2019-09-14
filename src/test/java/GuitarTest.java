@@ -1,4 +1,5 @@
-import instruments.Guitar;
+import goods.Guitar;
+import goods.Price;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,10 +8,12 @@ import static org.junit.Assert.assertEquals;
 public class GuitarTest {
 
     Guitar guitar;
+    Price price;
 
     @Before
     public void before(){
-        guitar = new Guitar("black", "Swamp Ash", "PRS", 6);
+        price = new Price(200, 600);
+        guitar = new Guitar("black", "Swamp Ash", "PRS", 6, price);
     }
 
     @Test
@@ -36,5 +39,20 @@ public class GuitarTest {
     @Test
     public void canPlayGuitar(){
         assertEquals("Twang!", guitar.play("Twang!"));
+    }
+
+    @Test
+    public void canGetBuyingPrice(){
+        assertEquals(200, price.getBuyingPrice());
+    }
+
+    @Test
+    public void canGetSellingPrice(){
+        assertEquals(600, price.getSellingPrice());
+    }
+
+    @Test
+    public void canGetMarkup(){
+        assertEquals(400, guitar.calculateMarkup(price.getBuyingPrice(), price.getSellingPrice()));
     }
 }

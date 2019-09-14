@@ -1,4 +1,4 @@
-package instruments;
+package goods;
 
 public abstract class Instrument {
     private String colour;

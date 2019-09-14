@@ -1,4 +1,4 @@
-package instruments;
+package goods;
 
 import behaviours.IPlay;
 
