@@ -1,4 +1,5 @@
 import goods.Keyboard;
+import goods.Price;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,10 +8,12 @@ import static org.junit.Assert.assertEquals;
 public class KeyboardTest {
 
     Keyboard keyboard;
+    Price price;
 
     @Before
     public void before(){
-        keyboard = new Keyboard("black", "PGX500", "Yamaha", 88);
+        price = new Price(300, 700);
+        keyboard = new Keyboard("black", "PGX500", "Yamaha", 88, price);
     }
 
     @Test
@@ -37,4 +40,20 @@ public class KeyboardTest {
     public void canPlayPiano() {
         assertEquals("Plonk!", keyboard.play("Plonk!"));
     }
+
+    @Test
+    public void canGetBuyingPrice() {
+        assertEquals(300, price.getBuyingPrice());
+    }
+
+    @Test
+    public void canGetSellingPrice() {
+        assertEquals(700, price.getSellingPrice());
+    }
+
+    @Test
+    public void canCalculateMarkup() {
+        assertEquals(400, keyboard.calculateMarkup(price.getBuyingPrice(), price.getSellingPrice()));
+    }
+
 }
