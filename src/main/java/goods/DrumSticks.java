@@ -9,6 +9,7 @@ public class DrumSticks implements ISell {
     public DrumSticks(Price price) {
         this.price = price;
     }
+
     public int calculateMarkup(int buyingPrice, int sellingPrice){
         return (sellingPrice - buyingPrice);
     }
