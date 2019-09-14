@@ -1,6 +1,8 @@
 package instruments;
 
-public class Keyboard extends Instrument {
+import behaviours.IPlay;
+
+public class Keyboard extends Instrument implements IPlay {
 
     private int numberOfKeys;
 
@@ -12,5 +14,10 @@ public class Keyboard extends Instrument {
     public int getNumberOfKeys() {
         return numberOfKeys;
     }
+
+    public String play(String sound) {
+        return sound;
+    }
+
 }
 
