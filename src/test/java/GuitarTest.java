@@ -1,4 +1,5 @@
 import goods.Guitar;
+import goods.Keyboard;
 import goods.Price;
 import org.junit.Before;
 import org.junit.Test;
